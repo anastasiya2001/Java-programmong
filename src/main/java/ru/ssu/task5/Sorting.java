@@ -11,8 +11,8 @@ public class Sorting {
         Scanner scanner = new Scanner(System.in);
         List<String> input = new ArrayList<>();
 
-        System.out.println("Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ РІ С„РѕСЂРјР°С‚Рµ: Р¤РРћР’Р»Р°РґРµР»СЊС†Р° РЅР°Р·РІР°РЅРёРµРљРѕРјРїР°РЅРёРё СЂРµР№С‚РёРЅРіРђРєС†РёРё");
-        System.out.println("Р”Р»СЏ РѕРєРѕРЅС‡Р°РЅРёСЏ РІРІРѕРґР° РЅР°Р¶РјРёС‚Рµ \"Enter\" РґРІР°Р¶РґС‹");
+        System.out.println("Введите данные в формате: ФИОВладельца названиеКомпании рейтингАкции");
+        System.out.println("Для окончания ввода нажмите \"Enter\" дважды");
 
         while (true) {
             String line = scanner.nextLine();
