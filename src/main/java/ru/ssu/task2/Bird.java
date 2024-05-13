@@ -1,8 +1,5 @@
 package ru.ssu.task2;
 
-/**
- * Bird
- */
 public interface Bird {
 
     void Hunt();
