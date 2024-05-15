@@ -41,15 +41,16 @@ public class Recursion {
                     archiveFiles(file, targetString); // Recursive call for directories
                 } else if (file.getName().contains(targetString)) {
                     // If file name contains targetString, archive it
-                    archiveFile(file);
+                    archiveFile(file, targetString);
                 }
             }
         }
     }
 
-    private static void archiveFile(File file) {
+    private static void archiveFile(File file, String targetString) {
         try {
-            File archiveFile = new File(file.getParent(), file.getName() + ".zip");
+            // Creating the archive file
+            File archiveFile = new File(file.getParent(), targetString + ".zip");
             FileOutputStream fos = new FileOutputStream(archiveFile);
             ZipOutputStream zos = new ZipOutputStream(fos);
             ZipEntry zipEntry = new ZipEntry(file.getName());
@@ -63,6 +64,7 @@ public class Recursion {
                 zos.write(buffer, 0, length);
             }
 
+            // Closing resources
             fis.close();
             zos.closeEntry();
             zos.close();
