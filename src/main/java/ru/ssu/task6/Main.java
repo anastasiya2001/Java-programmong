@@ -1,40 +1,53 @@
 package ru.ssu.task6;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class Main {
     public static void main(String[] args) {
-        FibonacciCalculator calculator = new FibonacciCalculator();
-        int n = 10;
-        long result = calculator.calculateFibonacci(n);
-        System.out.println("Fibonacci number at index " + n + ": " + result);
+        SafeIncrement safeIncrement = new SafeIncrement();
+        Thread thread1 = new Thread(safeIncrement::incrementTask1);
+        Thread thread2 = new Thread(safeIncrement::incrementTask2);
 
-        Counter counter = new Counter();
-        counter.increment();
-        System.out.println("Final Counter Value: " + counter.getCounter());
-
-        Queue<FoodItem> queue = new LinkedList<>();
-        Producer producer = new Producer(queue);
-        Consumer consumer1 = new Consumer(queue);
-        Consumer consumer2 = new Consumer(queue);
-
-        Thread producerThread = new Thread(producer);
-        Thread consumerThread1 = new Thread(consumer1);
-        Thread consumerThread2 = new Thread(consumer2);
-
-        producerThread.start();
-        consumerThread1.start();
-        consumerThread2.start();
+        thread1.start();
+        thread2.start();
 
         try {
-            Thread.sleep(60); // Даем программе поработать некоторое время
+            thread1.join();
+            thread2.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
 
-        producer.stop();
-        consumer1.stop();
-        consumer2.stop();
+        System.out.println("Final values: var1 = " + safeIncrement.getVar1() + ", var2 = " + safeIncrement.getVar2());
+
+        int[] array = new int[100000];
+        // Инициализируем массив случайными значениями или последовательными числами
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
+        }
+
+        int numThreads = 4;
+        MultiThreadSum multiThreadSum = new MultiThreadSum(array, numThreads);
+        long totalSum = multiThreadSum.computeSum();
+        System.out.println("Total Sum: " + totalSum);
+
+        Store store = new Store();
+
+        // Добавляем товары на витрину
+        store.addProduct(new Product("Apple", 1.20));
+        store.addProduct(new Product("Banana", 0.80));
+        store.addProduct(new Product("Orange", 1.50));
+        store.addProduct(new Product("Grapes", 2.00));
+        store.addProduct(new Product("Watermelon", 3.50));
+
+        // Периодически создаем покупателей
+        int M = 5; // Время в секундах между заходами покупателей
+        int N = 3; // Количество покупателей, заходящих разом
+
+        BuyerGenerator buyerGenerator = new BuyerGenerator(store, N, M);
+        buyerGenerator.start();
     }
 }
