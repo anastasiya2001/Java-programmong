@@ -1,4 +1,4 @@
-package ru.ssu.task6;
+package ru.ssu.task;
 
 public class Product {
     private final String name;

@@ -1,4 +1,4 @@
-package ru.ssu.task6;
+package ru.ssu.task;
 
 public class Buyer implements Runnable {
     private final long id;

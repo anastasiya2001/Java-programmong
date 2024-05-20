@@ -1,4 +1,4 @@
-package ru.ssu.task6;
+package ru.ssu.task;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -7,6 +7,15 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Main {
     public static void main(String[] args) {
+        Main main = new Main();
+        main.task1();
+        System.out.println("--------------------");
+        main.task2();
+        System.out.println("--------------------");
+        main.task3();
+    }
+
+    public void task1() {
         SafeIncrement safeIncrement = new SafeIncrement();
         Thread thread1 = new Thread(safeIncrement::incrementTask1);
         Thread thread2 = new Thread(safeIncrement::incrementTask2);
@@ -21,10 +30,12 @@ public class Main {
             Thread.currentThread().interrupt();
         }
 
-        System.out.println("Final values: var1 = " + safeIncrement.getVar1() + ", var2 = " + safeIncrement.getVar2());
+        System.out.println("Final values for Task 1: var1 = " + safeIncrement.getVar1() + ", var2 = " + safeIncrement.getVar2());
+    }
 
+    public void task2() {
         int[] array = new int[100000];
-        // Инициализируем массив случайными значениями или последовательными числами
+        // Инициализируем массив последовательными числами
         for (int i = 0; i < array.length; i++) {
             array[i] = i + 1;
         }
@@ -32,8 +43,10 @@ public class Main {
         int numThreads = 4;
         MultiThreadSum multiThreadSum = new MultiThreadSum(array, numThreads);
         long totalSum = multiThreadSum.computeSum();
-        System.out.println("Total Sum: " + totalSum);
+        System.out.println("Total Sum for Task 2: " + totalSum);
+    }
 
+    public void task3() {
         Store store = new Store();
 
         // Добавляем товары на витрину

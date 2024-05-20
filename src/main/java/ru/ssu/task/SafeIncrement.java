@@ -1,4 +1,4 @@
-package ru.ssu.task6;
+package ru.ssu.task;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
