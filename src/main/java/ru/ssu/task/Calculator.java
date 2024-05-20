@@ -1,4 +1,4 @@
-package main.java.ru.ssu.task1;
+package main.java.ru.ssu.task;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

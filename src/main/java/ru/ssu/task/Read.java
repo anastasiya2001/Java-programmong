@@ -1,6 +1,7 @@
-package main.java.ru.ssu.task1;
+package main.java.ru.ssu.task;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class Read {
         System.out.print("Enter file name: ");
         String filename = scanner.nextLine();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("main/java/ru/ssu/task1/"+filename))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir") + File.separator + filename))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(" ");

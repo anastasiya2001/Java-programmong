@@ -1,4 +1,4 @@
-package main.java.ru.ssu.task1;
+package main.java.ru.ssu.task;
 
 public class HelloWorld {
     public static void main(String[] args) {
