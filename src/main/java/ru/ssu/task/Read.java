@@ -7,12 +7,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Read {
+    private static final String ROOT_DIRECTORY = System.getProperty("user.dir") + File.separator;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter file name: ");
         String filename = scanner.nextLine();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir") + File.separator + filename))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(ROOT_DIRECTORY + filename))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(" ");
