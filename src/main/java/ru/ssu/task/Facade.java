@@ -1,4 +1,4 @@
-package main.java.ru.ssu.task3;
+package main.java.ru.ssu.task;
 
 public class Facade {
     public static void main(String[] args) {
@@ -13,18 +13,18 @@ public class Facade {
 
 class CarFacade {
     public void startEngine() {
-        System.out.println("Заводим двигатель");
+        System.out.println("??????? ?????????");
     }
 
     public void turnOnRadio() {
-        System.out.println("Включаем радио");
+        System.out.println("???????? ?????");
     }
 
     public void setSpeed(int speed) {
-        System.out.println(String.format("Уѝтанавливаем ѝкороѝть %d", speed));
+        System.out.println(String.format("????????????? ???????? %d", speed));
     }
 
     public void brake() {
-        System.out.println("Тормозим");
+        System.out.println("????????");
     }
 }

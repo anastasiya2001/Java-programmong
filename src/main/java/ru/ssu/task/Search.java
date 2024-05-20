@@ -1,4 +1,4 @@
-package main.java.ru.ssu.task3;
+package main.java.ru.ssu.task;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -6,17 +6,7 @@ import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class Search {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите целочисленные значения (через пробел):");
-        int[] array = Stream.of(scanner.nextLine().split(" "))
-                           .mapToInt(Integer::parseInt)
-                           .toArray();
-
-        findSecondLargestAndThirdSmallest(array);
-    }
-
-    public static void findSecondLargestAndThirdSmallest(int[] array) {
+    public void findSecondLargestAndThirdSmallest(int[] array) {
         if (array.length < 3) {
             System.out.println("Массив содержит менее трех элементов");
             return;
@@ -41,4 +31,20 @@ public class Search {
         System.out.println("Второе наибольшее число: " + secondLargest);
         System.out.println("Третье наименьшее число: " + thirdSmallest);
     }
+
+    public void execute() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите целочисленные значения (через пробел):");
+        int[] array = Stream.of(scanner.nextLine().split(" "))
+                           .mapToInt(Integer::parseInt)
+                           .toArray();
+
+        findSecondLargestAndThirdSmallest(array);
+    }
+
+    public static void main(String[] args) {
+        Search search = new Search();
+        search.execute();
+    }
+
 }
