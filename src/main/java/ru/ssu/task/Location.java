@@ -1,4 +1,4 @@
-package ru.ssu.task2;
+package ru.ssu.task;
 
 class Location {
     String area;

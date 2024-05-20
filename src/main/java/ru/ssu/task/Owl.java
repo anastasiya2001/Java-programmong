@@ -1,4 +1,4 @@
-package ru.ssu.task2;
+package ru.ssu.task;
 
 class Owl extends AbstractBird {
     public Owl(float weight, int age, Location location) {
