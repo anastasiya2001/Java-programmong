@@ -2,9 +2,7 @@ package ru.ssu.task;
 
 class Eagle extends AbstractBird {
     public Eagle(float weight, int age, Location location) {
-        this.weight = weight;
-        this.age = age;
-        this.location = location;
+        super(weight, age, location);
     }
 
     @Override
@@ -21,7 +19,7 @@ class Eagle extends AbstractBird {
     public boolean equals(Object o) {
         if (o instanceof Eagle) {
             Eagle e = (Eagle) o;
-            return this.weight == e.weight && this.age == e.age;
+            return this.weight == e.weight && this.age == e.age && this.location.area.equals(e.location.area);
         }
         return false;
     }
@@ -32,18 +30,12 @@ class Eagle extends AbstractBird {
     }
 
     public int compareTo(Eagle e) {
-        if (this.weight > e.weight) {
-            return 1;
-        } else if (this.weight < e.weight) {
-            return -1;
-        } else {
-            return 0;
-        }
+        return Float.compare(this.weight, e.weight);
     }
 
     @Override
     public String toString() {
-        return "Eagle: weight=" + weight + ", age=" + age;
+        return "Eagle: weight=" + weight + ", age=" + age + ", location=" + location.area;
     }
 
     public Eagle shallowCopy() {

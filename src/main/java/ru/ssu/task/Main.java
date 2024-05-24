@@ -11,14 +11,29 @@ public class Main {
         Eagle shallowCopyEagle = originalEagle.shallowCopy();
         Eagle deepCopyEagle = originalEagle.deepCopy();
 
+        Owl originalOwl = new Owl(1.2f, 5, new Location("Forest"));
+        Owl shallowCopyOwl = originalOwl.shallowCopy();
+        Owl deepCopyOwl = originalOwl.deepCopy();
+
+        list.add(originalEagle);
+        list.add(shallowCopyEagle);
+        list.add(deepCopyEagle);
+        list.add(originalOwl);
+        list.add(shallowCopyOwl);
+        list.add(deepCopyOwl);
+
         list.add(new Eagle(0.6f, 2, new Location("Baikal")));
         list.add(new Owl(0.3f, 5, new Location("Murom")));
 
-        System.out.println("Хешкод оригинального орла: " + originalEagle.hashCode());
-        System.out.println("Хешкод неглубокой копии орла: " + shallowCopyEagle.hashCode());
-        System.out.println("Хешкод глубокой копии орла: " + deepCopyEagle.hashCode());
+        System.out.println("РҐРµС€РєРѕРґ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРіРѕ РѕСЂР»Р°: " + originalEagle.hashCode());
+        System.out.println("РҐРµС€РєРѕРґ РЅРµРіР»СѓР±РѕРєРѕР№ РєРѕРїРёРё РѕСЂР»Р°: " + shallowCopyEagle.hashCode());
+        System.out.println("РҐРµС€РєРѕРґ РіР»СѓР±РѕРєРѕР№ РєРѕРїРёРё РѕСЂР»Р°: " + deepCopyEagle.hashCode());
 
-        System.out.println("Сравнение оригинального и неглубокой копии: " + originalEagle.equals(shallowCopyEagle));
+        System.out.println("РҐРµС€РєРѕРґ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕР№ СЃРѕРІС‹: " + originalOwl.hashCode());
+        System.out.println("РҐРµС€РєРѕРґ РЅРµРіР»СѓР±РѕРєРѕР№ РєРѕРїРёРё СЃРѕРІС‹: " + shallowCopyOwl.hashCode());
+        System.out.println("РҐРµС€РєРѕРґ РіР»СѓР±РѕРєРѕР№ РєРѕРїРёРё СЃРѕРІС‹: " + deepCopyOwl.hashCode());
+
+        System.out.println("РЎСЂР°РІРЅРµРЅРёРµ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРіРѕ РѕСЂР»Р° Рё РЅРµРіР»СѓР±РѕРєРѕР№ РєРѕРїРёРё: " + originalEagle.equals(shallowCopyEagle));
 
         for (IBird bird : list) {
             System.out.println(bird.toString());

@@ -2,9 +2,7 @@ package ru.ssu.task;
 
 class Owl extends AbstractBird {
     public Owl(float weight, int age, Location location) {
-        this.weight = weight;
-        this.age = age;
-        this.location = location;
+        super(weight, age, location);
     }
 
     @Override
@@ -19,7 +17,7 @@ class Owl extends AbstractBird {
 
     @Override
     public String toString() {
-        return "Owl: weight=" + weight + ", age=" + age;
+        return "Owl: weight=" + weight + ", age=" + age + ", location=" + location.area;
     }
 
     public Owl shallowCopy() {
