@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class Search {
     public void findSecondLargestAndThirdSmallest(int[] array) {
         if (array.length < 3) {
-            System.out.println("ÐœÐ°ÑÑÐ¸Ð² ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ð¼ÐµÐ½ÐµÐµ Ñ‚Ñ€ÐµÑ… ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²");
+            System.out.println("Ìàññèâ ñîäåðæèò ìåíåå òðåõ ýëåìåíòîâ");
             return;
         }
 
@@ -28,13 +28,13 @@ public class Search {
                                   .findFirst()
                                   .orElse(array[0]);
 
-        System.out.println("Ð’Ñ‚Ð¾Ñ€Ð¾Ðµ Ð½Ð°Ð¸Ð±Ð¾Ð»ÑŒÑˆÐµÐµ Ñ‡Ð¸ÑÐ»Ð¾: " + secondLargest);
-        System.out.println("Ð¢Ñ€ÐµÑ‚ÑŒÐµ Ð½Ð°Ð¸Ð¼ÐµÐ½ÑŒÑˆÐµÐµ Ñ‡Ð¸ÑÐ»Ð¾: " + thirdSmallest);
+        System.out.println("Âòîðîå íàèáîëüøåå ÷èñëî: " + secondLargest);
+        System.out.println("Òðåòüå íàèìåíüøåå ÷èñëî: " + thirdSmallest);
     }
 
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†ÐµÐ»Ð¾Ñ‡Ð¸ÑÐ»ÐµÐ½Ð½Ñ‹Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ (Ñ‡ÐµÑ€ÐµÐ· Ð¿Ñ€Ð¾Ð±ÐµÐ»):");
+        System.out.println("Ââåäèòå öåëî÷èñëåííûå çíà÷åíèÿ (÷åðåç ïðîáåë):");
         int[] array = Stream.of(scanner.nextLine().split(" "))
                            .mapToInt(Integer::parseInt)
                            .toArray();

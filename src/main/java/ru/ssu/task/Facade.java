@@ -13,18 +13,18 @@ public class Facade {
 
 class CarFacade {
     public void startEngine() {
-        System.out.println("??????? ?????????");
+        System.out.println("Запустить двигатель");
     }
 
     public void turnOnRadio() {
-        System.out.println("???????? ?????");
+        System.out.println("Включить радио");
     }
 
     public void setSpeed(int speed) {
-        System.out.println(String.format("????????????? ???????? %d", speed));
+        System.out.println(String.format("Установить скорость %d", speed));
     }
 
     public void brake() {
-        System.out.println("????????");
+        System.out.println("Тормизить");
     }
 }

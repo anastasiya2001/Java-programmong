@@ -14,7 +14,7 @@ public class Sort {
 
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Р’РІРµРґРёС‚Рµ С†РµР»РѕС‡РёСЃР»РµРЅРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ (С‡РµСЂРµР· РїСЂРѕР±РµР»):");
+        System.out.println("Введите целочисленные значения (через пробел):");
         Stream<Integer> stream = Stream.of(scanner.nextLine().split(" ")).map(Integer::parseInt);
 
         filterStream(stream);
