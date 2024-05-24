@@ -17,6 +17,7 @@ class Owl extends AbstractBird {
         System.out.println("Low-pitched hooting noises");
     }
 
+    @Override
     public String toString() {
         return "Owl: weight=" + weight + ", age=" + age;
     }

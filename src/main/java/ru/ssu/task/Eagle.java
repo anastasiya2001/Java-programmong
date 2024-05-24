@@ -17,6 +17,7 @@ class Eagle extends AbstractBird {
         System.out.println("High-pitched whistling noises");
     }
 
+    @Override
     public boolean equals(Object o) {
         if (o instanceof Eagle) {
             Eagle e = (Eagle) o;
@@ -25,6 +26,7 @@ class Eagle extends AbstractBird {
         return false;
     }
 
+    @Override
     public int hashCode() {
         return (int) (weight * age);
     }
@@ -39,6 +41,7 @@ class Eagle extends AbstractBird {
         }
     }
 
+    @Override
     public String toString() {
         return "Eagle: weight=" + weight + ", age=" + age;
     }
